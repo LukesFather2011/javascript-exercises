@@ -1,11 +1,14 @@
 const sumAll = function(num1=0, num2=0) {
 
     let sum = 0;
-
-    if (num1 < 0 || num2 < 0) {  // This works
+    
+    if (num1 < 0 || num2 < 0) {
         return "ERROR";
 
-    } else if (typeof(num1) != typeof(Number()) || typeof(num2) != typeof(Number())) {  // This does not, why?
+    } else if (!Number.isInteger(num1) || !Number.isInteger(num2)) {
+        return "ERROR";
+
+    } else if (typeof(num1) != typeof(Number()) || typeof(num2) != typeof(Number())) {
         return "ERROR";
 
     } else if (num1 > num2) {
